@@ -55,12 +55,14 @@ class App extends Component {
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
-  // componentDidMount() {
-  //   const contacts = localStorage.getItem("contacts");
-  //   const parseContacts = JSON.parse(contacts);
-  //   console.log(parseContacts);
-  //   this.setState({ contacts: parseContacts });
-  // }
+  componentDidMount() {
+    const myContacts = localStorage.getItem("contacts");
+
+    const parseContacts = JSON.parse(myContacts);
+    //console.log(this.state);
+    console.log(parseContacts);
+    this.setState({ contacts: parseContacts });
+  }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
       console.log("Updated!)");
