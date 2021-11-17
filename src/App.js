@@ -60,8 +60,9 @@ class App extends Component {
 
     const parseContacts = JSON.parse(myContacts);
     //console.log(this.state);
-    console.log(parseContacts);
-    this.setState({ contacts: parseContacts });
+    if (parseContacts) {
+      this.setState({ contacts: parseContacts });
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
